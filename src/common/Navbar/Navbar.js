@@ -12,7 +12,7 @@ export const Navbar = () => {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
@@ -86,7 +86,7 @@ export const Navbar = () => {
                             noWrap
                             component='a'
                             href="/"
-                            sx={{
+                            sx={(theme) => ({
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
                                 flexGrow: 1,
@@ -94,7 +94,15 @@ export const Navbar = () => {
                                 fontFamily: 'Inter, sans-serif',
                                 color: '#27272E',
                                 textDecoration: 'none',
-                            }}
+                                fontSize: '1.5rem',
+                                [theme.breakpoints.down("md")]: {
+                                    fontSize: '1rem',
+                                },
+                                [theme.breakpoints.down("sm")]: {
+                                    fontSize: '0.8rem',
+                                    mr: 0,
+                                },
+                            })}
                         >
                             AnimalShelter
                         </Typography>
@@ -106,15 +114,16 @@ export const Navbar = () => {
                                     onClick={handleCloseNavMenu}
                                     component='a'
                                     href={links[index]}
-                                    sx={{
+                                    sx={(theme) => ({
                                         my: 2,
                                         display: 'block',
                                         fontFamily: 'Inter, sans-serif',
                                         color: '#98999D',
                                         "&:hover": {
                                             color: '#27272E',
-                                        }
-                                    }}
+                                        },
+
+                                    })}
                                     className={router.pathname == links[index] && 'nav_bold'}
                                 >
                                     {page}
@@ -125,9 +134,16 @@ export const Navbar = () => {
                         <Box sx={{ flexGrow: 0 }}>
                             <Button
                                 variant='contained'
-                                sx={{
+                                sx={(theme) => ({
                                     backgroundColor: '#4C6FFF',
-                                }}
+                                    fontFamily: 'Inter, san-serif',
+                                    [theme.breakpoints.down("md")]: {
+                                        fontSize: '0.6rem',
+                                    },
+                                    [theme.breakpoints.down("sm")]: {
+                                        fontSize: '0.5rem',
+                                    },
+                                })}
                             >
                                 Tham gia ngay!
                             </Button>

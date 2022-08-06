@@ -11,7 +11,7 @@ export const ContentSection = ({ src, dark, reverse, section, title, description
     const contentPaddingLeft = reverse ? '0%' : '4%'
     const contentPaddingRight = reverse ? '4%' : '0%'
     const justifyContent = reverse ? 'space-between' : null
-    const lazyRoot = React.useRef(null)
+
     return (
         <Box sx={{
             backgroundColor: theme,
@@ -23,19 +23,21 @@ export const ContentSection = ({ src, dark, reverse, section, title, description
                     alignItems: 'center',
                     flexFlow: isReverse,
                     justifyContent: justifyContent,
-                    [theme.breakpoints.down("md")]: {
+                    [theme.breakpoints.down("sm")]: {
                         flexDirection: 'column'
                     },
                 })}
             >
-                <Box sx={{ height: { xl: '520px', md: '480px', xs: '350px' } }} >
+                <Box sx={{ height: { xl: '520px', md: '480px', sm:'280px',  xs: 'auto' }, width:{xs: '100%'}, display:'flex', justifyContent:'flex-end' }} >
                     <Box component='img' src={src.src} alt='Giới thiệu về AnimalShelter' sx={(theme) => ({
                         width: 'auto',
                         height: '100%',
                         aspectRatio: '1',
                         objectFit: 'cover',
-                        [theme.breakpoints.down("md")]: {
-                            aspectRatio: '16 / 9'
+                        [theme.breakpoints.down("sm")]: {
+                            aspectRatio: '16 / 9',
+                            width: '100%',
+                            height: 'auto',
                         },
                     })} />
                 </Box>
@@ -47,63 +49,89 @@ export const ContentSection = ({ src, dark, reverse, section, title, description
                         pt: '3%'
                     },
                 })} >
-                    <Typography variant='body2' sx={{
+                    <Typography variant='body2' sx={(theme) =>({
                         fontFamily: 'Inter, san-serif',
                         color: sectionColor,
                         fontSize: '1.125rem',
-                        fontWeight: '400'
-                    }}>
+                        fontWeight: '400',
+                        [theme.breakpoints.down("md")]: {
+                            fontSize: '0.6rem',
+                        },
+                    })}>
                         {section}
                     </Typography>
-                    <Typography variant='h3' sx={{
+                    <Typography variant='h3' sx={(theme) => ({
                         fontFamily: 'Inter, san-serif',
                         color: fontColor,
                         fontSize: '2.5rem',
                         fontWeight: '800',
-                        pt: 1
-                    }}>
+                        pt: 1,
+                        [theme.breakpoints.down("md")]: {
+                            fontSize: '1.5rem',
+                        },
+                    })}>
                         {title}
                     </Typography>
-                    <Typography variant='body1' sx={{
+                    <Typography variant='body1' sx={(theme)=>({
                         fontFamily: 'Inter, san-serif',
                         color: fontColor,
                         fontSize: '1.125rem',
                         fontWeight: '400',
-                        pt: 4
-                    }}>
+                        pt: 4,
+                        [theme.breakpoints.down("md")]: {
+                            fontSize: '0.6rem',
+                            pt:2
+                        },
+                    })}>
                         {description}
                     </Typography>
                     {isText && (
-                        <Box component='a' href='#' sx={{
+                        <Box component='a' href='#' sx={(theme)=>({
                             pt: 4,
                             display: 'flex',
                             alignItem: 'center',
                             textDecoration: 'none',
-                        }}>
-                            <Typography variant='h5' sx={{
+                            [theme.breakpoints.down("md")]: {
+                                pt: 2
+                            },
+                        })}>
+                            <Typography variant='body1' sx={(theme) => ({
                                 fontFamily: 'Inter, san-serif',
                                 color: "#4C6FFF",
                                 fontSize: '1.25rem',
-                                fontWeight: '700'
-                            }}>
+                                fontWeight: '700',
+                                [theme.breakpoints.down("md")]: {
+                                    fontSize: '0.65rem',
+                                },
+                            })}>
                                 Về chúng tôi
                             </Typography>
-                            <ArrowForwardIcon sx={{ my: 'auto', color: '#4C6FFF', ml: 2 }} />
+                            <ArrowForwardIcon sx={(theme) => ({ my: 'auto', color: '#4C6FFF', ml: 2, 
+                                [theme.breakpoints.down("md")]: {
+                                    fontSize: '0.65rem',
+                                    ml: 0.5
+                                },  
+                            })} />
                         </Box>
                     )}
 
                     { isButton && (
                         <Button
                             variant='contained'
-                            sx={{
+                            sx={(theme) => ({
                                 backgroundColor: '#FFF',
+                                fontFamily:'Inter, san-serif',
                                 color: '#16192C',
                                 fontWeight:'600',
                                 mt:4,
                                 "&:hover": {
                                     backgroundColor: '#EDF2F7'
-                                }
-                            }}
+                                },
+                                [theme.breakpoints.down("md")]: {
+                                    fontSize: '0.5rem',
+                                    mt:2
+                                },
+                            })}
                         >
                             Thử ngay
                         </Button>

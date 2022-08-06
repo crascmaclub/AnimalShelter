@@ -12,7 +12,7 @@ export const GalleryCard4_6 = ({ source }) => {
             height: 'auto',
             aspectRatio: '4 / 6',
             objectFit: 'cover',
-            mt:3,
+            mt:'2%',
             borderRadius: '8px'
         })} />
 
@@ -27,7 +27,7 @@ export const GalleryCard1 = ({ source }) => {
             height: 'auto',
             aspectRatio: '1',
             objectFit: 'cover',
-            mt:3,
+            mt:'2%',
             borderRadius: '8px'
         })} />
 
@@ -42,7 +42,7 @@ export const GalleryCard9_16 = ({ source }) => {
             height: 'auto',
             aspectRatio: '9 / 16',
             objectFit: 'cover',
-            mt:3,
+            mt:'2%',
             borderRadius: '8px'
         })} />
 

@@ -11,13 +11,16 @@ export const Gallery = () => {
             py: '4%'
         }}>
             <Box className='gallery-header' >
-                <Typography variant='body2' sx={{
+                <Typography variant='body2' sx={(theme) => ({
                     fontFamily: 'Inter, san-serif',
                     color: '#425466',
                     fontSize: '1.125rem',
                     fontWeight: '400',
-                    pb: '1%'
-                }}>
+                    pb: '1%',
+                    [theme.breakpoints.down("md")]: {
+                            fontSize: '0.6rem',
+                    },
+                })}>
                     03 - Thư viện
                 </Typography>
                 <Box sx={(theme) => ({
@@ -36,6 +39,9 @@ export const Gallery = () => {
                         [theme.breakpoints.down("md")]: {
                             fontSize: '2.5rem',
                         },
+                        [theme.breakpoints.down("sm")]: {
+                            fontSize: '1.5rem',
+                        },
                     })}>
                         Chúng tôi cung cấp thông tin đầy đủ nhất về các loài động thực vật trong thiên nhiên
                     </Typography>
@@ -49,13 +55,16 @@ export const Gallery = () => {
                             justifyContent: 'center'
                         },
                     })}>
-                        <Typography variant='body1' sx={{
+                        <Typography variant='body1' sx={(theme) => ({
                             fontFamily: 'Inter, san-serif',
                             color: '#425466',
                             fontSize: '1.125rem',
                             fontWeight: '400',
-                            pb: 2
-                        }}>
+                            pb: 2,
+                            [theme.breakpoints.down("md")]: {
+                                fontSize: '0.65rem',
+                            },
+                        })}>
                             AnimalShelter cung cấp cho người dùng một nguồn thông tin phong phú về các giống loài khác nhau để giúp mọi người thoải mái tìm tòi, khám phá.
                         </Typography>
                         <Button
@@ -65,7 +74,8 @@ export const Gallery = () => {
                                 color: '#FFF',
                                 fontWeight: '600',
                                 [theme.breakpoints.down("md")]: {
-                                    width: '16%'
+                                    width: 'max-content',
+                                    fontSize:'0.5rem'
                                 },
                             })}
                         >
@@ -75,7 +85,7 @@ export const Gallery = () => {
                 </Box>
             </Box>
 
-            <Grid container spacing={3} className='gallery-images' 
+            <Grid container spacing={'2%'} className='gallery-images' 
                 sx={{
                     py:'4%'
                 }}
