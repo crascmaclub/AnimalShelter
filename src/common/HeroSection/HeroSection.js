@@ -1,19 +1,17 @@
 import * as React from 'react';
 import { Container, Typography, Box, Button, TextField } from '@mui/material';
-import { useFormik } from 'formik';
 // import { useRouter } from 'next/router'
 
 
-export const HeroSection = ({ backgroundImg, title, description = null, isDescription, isButton = false, isInput = false }) => {
-    const formik = useFormik({
-        initialValues: {
-            animalName: '',
-        },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-            console.log(values)
-        },
-    });
+export const HeroSection = ({ backgroundImg, title, description = null, field, isDescription, isButton = false, isInput = false, setSearch, search }) => {
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+        console.log(field)
+    }
+
+    const handleSubmit = () => {
+        console.log('submit')
+    }
 
     return (
         <Box sx={(theme) => ({
@@ -86,12 +84,12 @@ export const HeroSection = ({ backgroundImg, title, description = null, isDescri
                 )}
 
                 {isInput && (
-                    <Box component='form' onSubmit={formik.handleSubmit} sx={{ pt: { md: '2%', xs: '4%' }, pb: "12%", display:'flex' }}>
+                    <Box component='form' onSubmit={handleSubmit} sx={{ pt: { md: '2%', xs: '4%' }, pb: "12%", display: 'flex' }}>
                         <TextField
                             id='animalName'
                             name="animalName"
-                            onChange={formik.handleChange}
-                            value={formik.values.animalName}
+                            onChange={handleChange}
+                            value={field.animalName}
                             label="Tên loài động vật ..."
                             variant="outlined"
                             required
@@ -126,7 +124,7 @@ export const HeroSection = ({ backgroundImg, title, description = null, isDescri
                         <Button
                             variant='contained'
                             type='submit'
-                            onClick={formik.handleSubmit}
+                            onClick={handleSubmit}
                             sx={(theme) => ({
                                 width: 'max-content',
                                 background: '#4C6FFF',
