@@ -105,7 +105,7 @@ export const CTASection = () => {
                                 borderRadius: '0px 5px 5px 0px',
                             })}
                         >
-                            Tham gia ngay!
+                            Search
                         </Button>
                     </Box>
                 </Box>

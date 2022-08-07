@@ -1,19 +1,29 @@
 import * as React from 'react';
-import { Container, Typography, Box, Button } from '@mui/material';
-import hero_img from '../../Assets/index/HeroImage2.png'
+import { Container, Typography, Box, Button, TextField } from '@mui/material';
+import { useFormik } from 'formik';
 // import { useRouter } from 'next/router'
 
 
-export const HeroSection = ({ backgroundImg, title, description, isDescription, isButton, isInput }) => {
+export const HeroSection = ({ backgroundImg, title, description = null, isDescription, isButton = false, isInput = false }) => {
+    const formik = useFormik({
+        initialValues: {
+            animalName: '',
+        },
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+            console.log(values)
+        },
+    });
+
     return (
         <Box sx={(theme) => ({
-            backgroundImage: `url(${hero_img.src})`,
+            backgroundImage: `url(${backgroundImg.src})`,
             backgroundColor: '#27272E',
             backgroundPosition: 'center',
             [theme.breakpoints.down("md")]: {
                 backgroundColor: '#191919',
                 backgroundPosition: 'center',
-                backgroundSize: 'contain',
+                backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             },
         })}>
@@ -35,7 +45,7 @@ export const HeroSection = ({ backgroundImg, title, description, isDescription, 
 
                     })}
                 >
-                    Sừng tê giác không khác móng tay con người
+                    {title ? title : ''}
                 </Typography>
                 <Typography variant='body1'
                     sx={(theme) => ({
@@ -47,30 +57,100 @@ export const HeroSection = ({ backgroundImg, title, description, isDescription, 
                         display: { md: 'block', xs: 'none' },
                     })}
                 >
-                    Tuy sừng tê giác không hề mang những khả năng chữa bệnh ‘kì diệu’, hay là thần dược như nhiều người đồn thổi nhưng hàng năm vẫn có hàng trăm, hàng ngàn cá thể tê giác bị săn bắt và lấy sừng trái phép. Chính vì thế, cùng nhau chúng ta hãy chung tay chống lại tệ nạn này bằng cách nâng cao nhận thức của bản thân cũng như những người xung quanh về giống loài đáng yêu này nhé.
+                    {description ? description : ''}
                 </Typography>
-                <Box sx={{
-                    pt: 4,
-                    pb: "12%",
-                }}>
-                    <Button
-                        variant='contained'
-                        sx={(theme)=>({
-                            backgroundColor: '#FFF',
-                            fontFamily:'Inter, san-serif',
-                            color: '#16192C',
-                            fontWeight: '600',
-                            "&:hover": {
-                                backgroundColor: '#EDF2F7'
-                            },
-                            [theme.breakpoints.down("md")]: {
-                                fontSize: '0.5rem'
-                            },
-                        })}
-                    >
-                        Tìm hiểu ngay
-                    </Button>
-                </Box>
+
+                {isButton && (
+                    <Box sx={{
+                        pt: 4,
+                        pb: "12%",
+                    }}>
+                        <Button
+                            variant='contained'
+                            sx={(theme) => ({
+                                backgroundColor: '#FFF',
+                                fontFamily: 'Inter, san-serif',
+                                color: '#16192C',
+                                fontWeight: '600',
+                                "&:hover": {
+                                    backgroundColor: '#EDF2F7'
+                                },
+                                [theme.breakpoints.down("md")]: {
+                                    fontSize: '0.5rem'
+                                },
+                            })}
+                        >
+                            Tìm hiểu ngay
+                        </Button>
+                    </Box>
+                )}
+
+                {isInput && (
+                    <Box component='form' onSubmit={formik.handleSubmit} sx={{ pt: { md: '2%', xs: '4%' }, pb: "12%", display:'flex' }}>
+                        <TextField
+                            id='animalName'
+                            name="animalName"
+                            onChange={formik.handleChange}
+                            value={formik.values.animalName}
+                            label="Tên loài động vật ..."
+                            variant="outlined"
+                            required
+                            size='small'
+                            sx={(theme) => ({
+                                width: '35%',
+                                '& > div': {
+                                    borderRadius: '5px 0px 0px 5px!important',
+                                    background: '#fff',
+                                },
+                                '& > div > fieldset': {
+                                    borderColor: '#fff'
+                                },
+                                '& > div > input': {
+                                    [theme.breakpoints.down("md")]: {
+                                        fontSize: '0.4rem',
+                                    },
+                                    [theme.breakpoints.down("sm")]: {
+                                        fontSize: '0.3rem',
+                                    },
+                                },
+                                '& > label ': {
+                                    [theme.breakpoints.down("md")]: {
+                                        fontSize: '0.55rem',
+                                    },
+                                    [theme.breakpoints.down("sm")]: {
+                                        fontSize: '0.45rem',
+                                    },
+                                },
+                            })}
+                        />
+                        <Button
+                            variant='contained'
+                            type='submit'
+                            onClick={formik.handleSubmit}
+                            sx={(theme) => ({
+                                width: 'max-content',
+                                background: '#4C6FFF',
+                                fontFamily: 'Inter, san-serif',
+                                color: '#FFF',
+                                fontWeight: '600',
+                                "&:hover": {
+                                    backgroundColor: '#EDF2F7'
+                                },
+                                [theme.breakpoints.down("md")]: {
+                                    fontSize: '0.5rem',
+                                },
+                                [theme.breakpoints.down("sm")]: {
+                                    fontSize: '0.4rem',
+                                },
+                                filter: 'drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25))',
+                                borderRadius: '0px 5px 5px 0px',
+                            })}
+                        >
+                            Tìm kiếm
+                        </Button>
+                    </Box>
+                )}
+
             </Container>
         </Box>
     );
