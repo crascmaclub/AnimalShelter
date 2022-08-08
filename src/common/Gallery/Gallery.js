@@ -68,7 +68,7 @@ export const Gallery = () => {
         )
     } else {
         return (
-            <Container maxWidth='xl' sx={{
+            <Container component='section'  maxWidth='xl' sx={{
                 py: '4%'
             }}>
                 <Box className='gallery-header' >

@@ -23,7 +23,7 @@ export const HeroSection = ({ backgroundImg, title, description = null, field, i
     }
 
     return (
-        <Box sx={(theme) => ({
+        <Box component='section' className="HeroSection" sx={(theme) => ({
             backgroundImage: `url(${backgroundImg.src})`,
             backgroundColor: '#27272E',
             backgroundPosition: 'center',

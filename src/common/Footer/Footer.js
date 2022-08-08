@@ -5,12 +5,13 @@ import { FacebookOutlined } from '@ant-design/icons';
 // import { useRouter } from 'next/router'
 
 export const Footer = () => {
-    const links = ['/', '/library', '/project', '/community']
-    const pages = ['Trang chủ', 'Thư viện', 'Dự án', 'Cộng đồng']
+    const links = ['/', '/library', '/project/ebs']
+    const pages = ['Trang chủ', 'Thư viện', 'Dự án']
     const router = useRouter()
+    console.log(router.pathname)
 
     return (
-        <Box sx={{ background: '#333333' }}>
+        <Box component="footer" sx={{ background: '#333333' }}>
             <Container maxWidth='xl'>
                 <Box sx={(theme) => ({
                     pt: '4%',

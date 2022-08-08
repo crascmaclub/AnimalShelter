@@ -65,7 +65,7 @@ export const ContentSection = ({ src, dark, reverse, section, title, description
     }
 
     return (
-        <Box sx={{
+        <Box component='section' sx={{
             backgroundColor: theme,
         }}>
             <Container maxWidth='xl'

@@ -14,13 +14,13 @@ const Library = () => {
 
 
   return (
-    <div>
+    <main>
 
       <HeroSection field={search} setSearch={setSearch} isInput={true} backgroundImg={libray_bg} title={'Cùng khám phá các sự thật thú vị về các loài động vật '} />
 
       <LibraryResult field={search} area={area} type={type} setArea={setArea} setType={setType} />
 
-    </div>
+    </main>
   )
 }
 

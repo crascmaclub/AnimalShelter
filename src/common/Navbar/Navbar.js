@@ -4,8 +4,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/router'
 
 export const Navbar = () => {
-    const links = ['/', '/library', '/project', '/community']
-    const pages = ['Trang chủ', 'Thư viện', 'Dự án', 'Cộng đồng']
+    const links = ['/', '/library', '/project/ebs']
+    const pages = ['Trang chủ', 'Thư viện', 'Dự án']
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const router = useRouter()
 

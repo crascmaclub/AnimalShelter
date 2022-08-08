@@ -8,7 +8,7 @@ export const DetailHeroSection = ({ data }) => {
     const processed_data = data[0]
 
     return (
-        <Box>
+        <Box component='section' className="HeroSection" >
             <Box sx={(theme) => ({
                 py: '5%',
                 px: '5%',

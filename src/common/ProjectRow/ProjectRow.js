@@ -3,10 +3,10 @@ import { Container, Typography, Box, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 // import { useRouter } from 'next/router'
 
-export const ProjectRow = ({ src, dark, reverse, section, title, description, isText, developed }) => {
+export const ProjectRow = ({ src, dark, reverse, section, title, description, isText, developed, path }) => {
     const theme = dark ? '#333333' : '#fff';
     const fontColor = dark ? '#fff' : '#18191F'
-    const sectionColor= dark ? '#E2E8F0' : '#425466'
+    const sectionColor = dark ? '#E2E8F0' : '#425466'
     const isReverse = reverse ? 'row-reverse' : 'row'
     const justifyContent = reverse ? 'space-between' : null
     const contentPaddingLeft = reverse ? '11%' : '5%'
@@ -27,7 +27,7 @@ export const ProjectRow = ({ src, dark, reverse, section, title, description, is
                     // },
                 })}
             >
-                <Box sx={{ height: 'auto', width:'50%', display:'flex', justifyContent:'flex-end' }} >
+                <Box sx={{ height: 'auto', width: '50%', display: 'flex', justifyContent: 'flex-end' }} >
                     <Box component='img' src={src.src} alt='Giới thiệu về AnimalShelter' sx={(theme) => ({
                         width: '100%',
                         height: 'auto',
@@ -40,12 +40,12 @@ export const ProjectRow = ({ src, dark, reverse, section, title, description, is
                     pl: contentPaddingLeft,
                     pr: contentPaddingRight,
                     [theme.breakpoints.down("xl")]: {
-                        px:'2.5%'
+                        px: '2.5%'
                     },
                     // px:'5%',
-                    width:'50%',
+                    width: '50%',
                 })} >
-                    <Typography variant='body2' sx={(theme) =>({
+                    <Typography variant='body2' sx={(theme) => ({
                         fontFamily: 'Inter, san-serif',
                         color: sectionColor,
                         fontSize: '1.125rem',
@@ -74,7 +74,7 @@ export const ProjectRow = ({ src, dark, reverse, section, title, description, is
                     })}>
                         {title}
                     </Typography>
-                    <Typography variant='body1' sx={(theme)=>({
+                    <Typography variant='body1' sx={(theme) => ({
                         fontFamily: 'Inter, san-serif',
                         color: fontColor,
                         fontSize: '1.125rem',
@@ -87,14 +87,14 @@ export const ProjectRow = ({ src, dark, reverse, section, title, description, is
                             fontSize: '0.6rem',
                         },
                         [theme.breakpoints.down("sm")]: {
-                            display:'none'
+                            display: 'none'
                         },
                     })}>
                         {description}
                     </Typography>
 
                     {isText && (
-                        <Box component='a' href='#' sx={(theme)=>({
+                        <Box component='a' href='#' sx={(theme) => ({
                             pt: 4,
                             display: 'flex',
                             alignItem: 'center',
@@ -114,24 +114,26 @@ export const ProjectRow = ({ src, dark, reverse, section, title, description, is
                             })}>
                                 Về chúng tôi
                             </Typography>
-                            <ArrowForwardIcon sx={(theme) => ({ my: 'auto', color: '#4C6FFF', ml: 2, 
+                            <ArrowForwardIcon sx={(theme) => ({
+                                my: 'auto', color: '#4C6FFF', ml: 2,
                                 [theme.breakpoints.down("md")]: {
                                     fontSize: '0.65rem',
                                     ml: 0.5
-                                },  
+                                },
                             })} />
                         </Box>
                     )}
 
-                    { developed ? (
+                    {developed ? (
                         <Button
                             variant='outlined'
+                            disabled
                             sx={(theme) => ({
-                                fontWeight:'600',
-                                fontFamily:'Inter, san-serif',
-                                mt:'8%',
+                                fontWeight: '600',
+                                fontFamily: 'Inter, san-serif',
+                                mt: '8%',
                                 border: '1px solid #EDF2F7 !important',
-                                color: '#FFFFFF',
+                                color: '#FFFFFF!important',
                                 [theme.breakpoints.down("md")]: {
                                     fontSize: '0.5rem',
                                     // mt:2
@@ -146,13 +148,15 @@ export const ProjectRow = ({ src, dark, reverse, section, title, description, is
                         </Button>
                     ) : (
                         <Button
+                            component='a'
+                            href= {`/project/${path}`}
                             variant='contained'
                             sx={(theme) => ({
                                 backgroundColor: '#FFF',
-                                fontFamily:'Inter, san-serif',
+                                fontFamily: 'Inter, san-serif',
                                 color: '#16192C',
-                                fontWeight:'600',
-                                mt:'8%',
+                                fontWeight: '600',
+                                mt: '8%',
                                 "&:hover": {
                                     backgroundColor: '#EDF2F7'
                                 },

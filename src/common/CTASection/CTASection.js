@@ -17,7 +17,7 @@ export const CTASection = () => {
     });
 
     return (
-        <Box sx={(theme) => ({
+        <Box component='section' sx={(theme) => ({
             backgroundImage: `url(${cta_bg.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'

@@ -8,9 +8,10 @@ import image2 from '../../Assets/index/forest_free_fire.jpg'
 export const ProjectSection = () => {
 
     return (
-        <Box>
+        <Box component='section' >
             <ProjectRow dark={true}
                 src={image1}
+                path='ebs'
                 reverse = {false}
                 developed = {false}
                 section={'04 - Các dự án'}

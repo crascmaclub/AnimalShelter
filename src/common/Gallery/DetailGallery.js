@@ -12,7 +12,7 @@ export const DetailGallery = ({ data }) => {
     const isImage = processed_data["Gallery"].length > 0 
     console.log(processed_data)
     return (
-        <Container maxWidth='xl' sx={{
+        <Container component='section' maxWidth='xl' sx={{
             py: '4%'
         }}>
             <Box className='gallery-header' >

@@ -12,7 +12,7 @@ import hero_img from '../../Assets/index/HeroImage2.png'
 
 const Homepage = () => {
   return (
-    <div>
+    <main>
       <HeroSection isButton={true} backgroundImg={hero_img} title={'Sừng tê giác không khác móng tay con người.'} description={'Tuy sừng tê giác không hề mang những khả năng chữa bệnh ‘kì diệu’, hay là thần dược như nhiều người đồn thổi nhưng hàng năm vẫn có hàng trăm, hàng ngàn cá thể tê giác bị săn bắt và lấy sừng trái phép. Chính vì thế, cùng nhau chúng ta hãy chung tay chống lại tệ nạn này bằng cách nâng cao nhận thức của bản thân cũng như những người xung quanh về giống loài đáng yêu này nhé.'} />
       {/* IntroSection */}
       <ContentSection src={row1} reverse={false} dark={false} isText={true}
@@ -30,7 +30,7 @@ const Homepage = () => {
       <ProjectSection />
 
       <CTASection />
-    </div>
+    </main>
   )
 }
 
