@@ -3,7 +3,7 @@ import { Container, Backdrop, Typography, CircularProgress, Box, Button, Select,
 import { LibraryCard } from '../../common/Card/LibraryCard'
 import { TrademarkOutlined } from '@ant-design/icons';
 
-export const LibraryResult = ({ area, type, setArea, setType }) => {
+export const LibraryResult = ({ area, type, setArea, setType, field }) => {
     const [loading, setLoading] = React.useState(false)
     const listHeaders = ['Ăn thịt', 'Ăn cỏ', 'Thủy sinh', 'Trên cạn']
     const continentsVN = ['Châu Á', 'Châu Âu', 'Châu Đại Dương', 'Bắc Mỹ', 'Nam Mỹ', 'Châu Nam Cực', 'Châu Phi']
@@ -25,8 +25,8 @@ export const LibraryResult = ({ area, type, setArea, setType }) => {
             setArea([continentsEN[index], event.target.value]);
             let tmp = []
             for (let i = 0; i < data.length; i++) {
-                if(data[i]["Location Map"]){
-                    if(data[i]["Location Map"][0] == continentsEN[index]){
+                if (data[i]["Location Map"]) {
+                    if (data[i]["Location Map"][0] == continentsEN[index]) {
                         tmp.push(data[i])
                     }
                 }
@@ -34,7 +34,7 @@ export const LibraryResult = ({ area, type, setArea, setType }) => {
 
             setTmpData(tmp)
             let tmpPageData = []
-            if(tmp.length > 18){
+            if (tmp.length > 18) {
                 for (let index = 0; index < 18; index++) {
                     tmpPageData.push(tmp[index])
                 }
@@ -89,12 +89,76 @@ export const LibraryResult = ({ area, type, setArea, setType }) => {
             );
     }, [])
 
+    React.useEffect(() => {
+        // REAL TIME SEARCH
+        // if (field.animalName != '') {
+        //     let tmp = []
+
+        //     for (let index = 0; index < data.length; index++) {
+        //         let base_str = data[index]["name"].toLowerCase()
+        //         let check_str = field.animalName.toLowerCase()
+        //         let check = base_str.includes(check_str)
+        //         if (check) {
+        //             tmp.push(data[index])
+        //         }
+        //     }
+
+        //     setTmpData(tmp)
+
+        //     let tmpPage = []
+        //     for (let index = 0; index < tmp.length; index++) {
+        //         tmpPage.push(tmp[index])
+        //     }
+        //     setPageData(tmpPage)
+        // } else {
+        //     setTmpData(data)
+        //     let tmpPage = []
+        //     for (let index = 0; index < 18; index++) {
+        //         tmpPage.push(data[index])
+        //     }
+        //     setPageData(tmpPage)
+        // }
+
+        // ---------------------------------------------------------
+
+        // On submit search
+        console.log(field)
+        if (field.animalName != '') {
+            let tmp = []
+
+            for (let index = 0; index < data.length; index++) {
+                let base_str = data[index]["name"].toLowerCase()
+                let check_str = field.animalName.toLowerCase()
+                let check = base_str.includes(check_str)
+                if (check) {
+                    tmp.push(data[index])
+                }
+            }
+
+            setTmpData(tmp)
+
+            let tmpPage = []
+            for (let index = 0; index < tmp.length; index++) {
+                tmpPage.push(tmp[index])
+            }
+            setPageData(tmpPage)
+        } else {
+            setTmpData(data)
+            let tmpPage = []
+            for (let index = 0; index < 18; index++) {
+                tmpPage.push(data[index])
+            }
+            setPageData(tmpPage)
+        }
+
+    }, [field])
+
     if (error) {
         return <>{error.message}</>;
     } else if (!loading) {
         return (
             <Backdrop
-                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#4C6FFF' }}
                 open={true}
             >
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -125,7 +189,7 @@ export const LibraryResult = ({ area, type, setArea, setType }) => {
                                 flexDirection: 'column'
                             },
                         })}>
-                        <Box className='leftGroup' sx={{ width: '100%', display: { sm: 'block', xs: 'none' } }}>
+                        <Box className='leftGroup' sx={{ width: '100%', display: { sm: 'none', xs: 'none' } }}>
                             {listHeaders.map((item, index) => {
                                 return (
                                     <Button
@@ -158,7 +222,7 @@ export const LibraryResult = ({ area, type, setArea, setType }) => {
                             })}
                         </Box>
                         <Box sx={{
-
+                            ml:'auto'
                         }}>
                             <FormControl
                                 sx={(theme) => ({
@@ -222,7 +286,7 @@ export const LibraryResult = ({ area, type, setArea, setType }) => {
                     </Box>
 
                     <Box sx={{ display: 'flex', justifyContent: 'center', pt: '4%' }}>
-                        <Pagination count={100} defaultPage={1} siblingCount={0} boundaryCount={2} shape="rounded" page={page} onChange={handleChangePagination} />
+                        <Pagination count={Math.floor(tmpData.length / 18)} defaultPage={1} siblingCount={0} boundaryCount={2} shape="rounded" page={page} onChange={handleChangePagination} />
                     </Box>
                 </Container>
             </Box>

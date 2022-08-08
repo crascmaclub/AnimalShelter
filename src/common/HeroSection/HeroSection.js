@@ -4,12 +4,21 @@ import { Container, Typography, Box, Button, TextField } from '@mui/material';
 
 
 export const HeroSection = ({ backgroundImg, title, description = null, field, isDescription, isButton = false, isInput = false, setSearch, search }) => {
+    let initialValues = {
+        animalName: '',
+    }
+    const [value, setValue] = React.useState(initialValues)
     const handleChange = (e) => {
-        setSearch(e.target.value)
-        console.log(field)
+        // setSearch({animalName:`${e.target.value}`})
+        setValue({animalName:`${e.target.value}`})
+        if(e.target.value == ''){
+            setSearch({ animalName: ''})
+        }
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setSearch({ animalName: `${value.animalName}`})
         console.log('submit')
     }
 
@@ -89,7 +98,7 @@ export const HeroSection = ({ backgroundImg, title, description = null, field, i
                             id='animalName'
                             name="animalName"
                             onChange={handleChange}
-                            value={field.animalName}
+                            value={value.animalName}
                             label="Tên loài động vật ..."
                             variant="outlined"
                             required
@@ -132,7 +141,7 @@ export const HeroSection = ({ backgroundImg, title, description = null, field, i
                                 color: '#FFF',
                                 fontWeight: '600',
                                 "&:hover": {
-                                    backgroundColor: '#EDF2F7'
+                                    backgroundColor: '#4C6FFF'
                                 },
                                 [theme.breakpoints.down("md")]: {
                                     fontSize: '0.5rem',
