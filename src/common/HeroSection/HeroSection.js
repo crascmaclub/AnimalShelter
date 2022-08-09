@@ -3,7 +3,7 @@ import { Container, Typography, Box, Button, TextField } from '@mui/material';
 // import { useRouter } from 'next/router'
 
 
-export const HeroSection = ({ backgroundImg, title, description = null, field, isDescription, isButton = false, isInput = false, setSearch, search }) => {
+export const HeroSection = ({ loading, backgroundImg, title, description = null, field, isDescription, isButton = false, isInput = false, setSearch, search }) => {
     let initialValues = {
         animalName: '',
     }
@@ -134,6 +134,7 @@ export const HeroSection = ({ backgroundImg, title, description = null, field, i
                             variant='contained'
                             type='submit'
                             onClick={handleSubmit}
+                            disabled={loading}
                             sx={(theme) => ({
                                 width: 'max-content',
                                 background: '#4C6FFF',

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container, Backdrop, Typography, CircularProgress, Box, Button, Select, MenuItem, FormControl, InputLabel, Grid, Pagination } from '@mui/material';
 import { LibraryCard } from '../../common/Card/LibraryCard'
-import { TrademarkOutlined } from '@ant-design/icons';
 
-export const LibraryResult = ({ area, type, setArea, setType, field }) => {
+export const LibraryResult = ({ area, type, setArea, setType, field, apiData }) => {
     const [loading, setLoading] = React.useState(false)
     const listHeaders = ['Ăn thịt', 'Ăn cỏ', 'Thủy sinh', 'Trên cạn']
     const continentsVN = ['Châu Á', 'Châu Âu', 'Châu Đại Dương', 'Bắc Mỹ', 'Nam Mỹ', 'Châu Nam Cực', 'Châu Phi']

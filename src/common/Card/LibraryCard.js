@@ -1,8 +1,8 @@
 import React from 'react'
-import { Grid, Typography, Box, Paper, Button } from '@mui/material';
+import { Grid, Typography, Box, Paper, Button, Skeleton } from '@mui/material';
 import test from '../../Assets/library/aardvark.jpg'
 
-export const LibraryCard = ({ data }) => {
+export const LibraryCard = ({ data, loading }) => {
     const titles = ['Fun fact:  ', 'Chiều dài:  ', 'Vòng đời:  ', 'Cân nặng:  ']
     const keys = ['Fun Fact', 'Length', 'Lifespan', 'Weight']
 
