@@ -5,6 +5,10 @@ import {
   createTheme,
   StyledEngineProvider
 } from "@mui/material/styles";
+
+import { store } from '../src/redux/store';
+import { Provider } from 'react-redux';
+
 const theme = createTheme();
 
 function MyApp({ Component, pageProps }) {
@@ -12,7 +16,9 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <StyledEngineProvider injectFirst>
         <Layout>
-          <Component {...pageProps} />
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
         </Layout>
       </StyledEngineProvider>
     </ThemeProvider>
