@@ -70,8 +70,8 @@ export const Navbar = () => {
                                     display: { xs: 'block', md: 'none' },
                                 }}
                             >
-                                {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                {pages.map((page,index) => (
+                                    <MenuItem key={page} component={'a'} href={links[index]} onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center" sx={{
                                             fontFamily: 'Inter, sans-serif',
                                             color: '#27272E !important'
