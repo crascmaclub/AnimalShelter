@@ -2,7 +2,15 @@ import React from 'react'
 import { Grid, Typography, Box, Paper, Button } from '@mui/material';
 
 export const DetailCard1 = ({ data }) => {
-    const plh = [['Kingdom', 'Giới: '], ['Phylum', 'Ngành: '], ['Class', 'Lớp: '], ['Order', 'Bộ: '], ['Family', 'Họ: '], ['Genus', 'Chi: '], ['Scientific Name', 'Tên Khoa Học: ']]
+    const plh = [
+        ['Kingdom', 'Giới: '], 
+        ['Phylum', 'Ngành: '], 
+        ['Class', 'Lớp: '], 
+        ['Order', 'Bộ: '], 
+        ['Family', 'Họ: '], 
+        ['Genus', 'Chi: '], 
+        ['Scientific Name', 'Tên Khoa Học: ']
+    ]
     const processed_data = data[0]
     console.log(processed_data)
     return (
