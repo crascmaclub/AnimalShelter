@@ -19,11 +19,11 @@ const Homepage = ({data}) => {
       <ContentSection src={row1} reverse={false} dark={false} isText={true}
         section={'01 - Giới thiệu'}
         title={'AnimalShelter là'}
-        description={'Một dự án với sứ mệnh nâng cao nhận thức của người dân về các loài động thực vật mà cụ thể hơn là những loài đang có nguy cơ tuyệt chủng. Ngoài ra, chúng tôi cũng nhắm tới việc phát triển các dự án giúp nắm bắt được những sự thay đổi về môi trường ảnh hưởng xấu tới môi trường sinh thái để có thể đưa ra các giải pháp kịp thời.'} />
+        description={'Một dự án với sứ mệnh nâng cao nhận thức của người dân về các loài động vật mà cụ thể hơn là những loài đang có nguy cơ tuyệt chủng. Ngoài ra, chúng tôi cũng nhắm tới việc phát triển các dự án giúp nắm bắt được những sự thay đổi về môi trường ảnh hưởng xấu tới môi trường sinh thái để có thể đưa ra các giải pháp kịp thời.'} />
       {/* RadarSection */}
       <ContentSection src={row2} reverse={true} dark={true} isText={false} isButton={true}
         section={'02 - Radar'}
-        title={'Tìm kiếm các loài động thực vật xung quanh bạn'}
+        title={'Tìm kiếm các loài động vật xung quanh bạn'}
         description={'Khám phá những loài động ở gần khu vực bạn sinh sống một cách nhanh chóng.'} />
 
       <Gallery apiData={data} />

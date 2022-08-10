@@ -16,7 +16,7 @@ export const ProjectSection = () => {
                 developed = {false}
                 section={'04 - Các dự án'}
                 title={'Hệ thống kiểm soát môi trường sinh thái '}
-                description={'Đây là một dự án nhằm cập nhật các thông tin (Ví dụ: nhiệt độ, độ ẩm) liên tục để giúp người dùng hiểu hơn về môi trường sống của các loài động thực vật và đồng thời nắm bắt những sự thay đổi ảnh hưởng tiêu cực đến môi trường sống.'} />
+                description={'Đây là một dự án nhằm cập nhật các thông tin (Ví dụ: nhiệt độ, độ ẩm) liên tục để giúp người dùng hiểu hơn về môi trường sống của các loài động vật và đồng thời nắm bắt những sự thay đổi ảnh hưởng tiêu cực đến môi trường sống.'} />
 
                 <ProjectRow dark={true}
                 src={image2}
