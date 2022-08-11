@@ -48,7 +48,7 @@ export default function Home({ data }) {
   const [loading, setLoading] = React.useState(false)
 
   const listHeaders = ['Ăn thịt', 'Ăn cỏ', 'Thủy sinh', 'Trên cạn']
-  const continentsVN = ['Châu Á', 'Châu Âu', 'Châu Đại Dương', 'Bắc Mỹ', 'Nam Mỹ', 'Châu Nam Cực', 'Châu Phi']
+  const continentsVN = ['Châu Á', 'Châu Âu', 'Châu Đại Dương', 'Bắc Mỹ', 'Nam Mỹ', 'Nam Cực', 'Châu Phi']
   const continentsEN = ['Asia', 'Europe', 'Oceania', 'North-America', 'South-America', 'Antarctica', 'Africa']
   const [page, setPage] = React.useState(1);
   const [clientData, setClientData] = React.useState([])
@@ -73,11 +73,13 @@ export default function Home({ data }) {
   const handleChange = (event) => {
     if (event.target.value != 0) {
       const index = continentsVN.indexOf(event.target.value)
+      const value = String(event.target.value)
       setArea([continentsEN[index], event.target.value]);
       let tmp = []
       for (let i = 0; i < clientData.length; i++) {
         if (clientData[i]["Location Map"]) {
-          if (clientData[i]["Location Map"][0] == continentsEN[index]) {
+          let check = String(clientData[i]["Location Map"][0])
+          if (check.toLowerCase() == value.toLowerCase()) {
             tmp.push(clientData[i])
           }
         }
