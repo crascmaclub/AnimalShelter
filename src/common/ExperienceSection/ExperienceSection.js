@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Backdrop, Typography, CircularProgress, Box, Button, Select, MenuItem, FormControl, InputLabel, Grid, Pagination } from '@mui/material';
-import test from '../../Assets/project/hero-image.png'
+import test from '../../Assets/project/hero-image.jpg'
 import { EBSCard } from '../Card/EBSCard';
 // import { useRouter } from 'next/router'
 

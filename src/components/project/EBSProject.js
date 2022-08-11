@@ -3,12 +3,12 @@ import { EBSHeroSection } from '../../common/HeroSection/EBSHeroSection'
 import { BasicInformationSection } from '../../common/InformationSection/BasicInformationSection'
 import { EBSContentSection } from '../../common/ContentSection/EBSContentSection'
 import { ExperienceSection } from '../../common/ExperienceSection/ExperienceSection'
-import img1 from '../../Assets/project/image-small1.png'
-import img2 from '../../Assets/project/image-small2.png'
-import img3 from '../../Assets/project/image-small3.png'
-import img4 from '../../Assets/project/image-big1.png'
-import img5 from '../../Assets/project/image-big2.png'
-import img6 from '../../Assets/project/image-big3.png'
+import img1 from '../../Assets/project/image-small1.jpg'
+import img2 from '../../Assets/project/image-small2.jpg'
+import img3 from '../../Assets/project/image-small3.jpg'
+import img4 from '../../Assets/project/image-big1.jpg'
+import img5 from '../../Assets/project/image-big2.jpg'
+import img6 from '../../Assets/project/image-big3.jpg'
 
 const EBSProject = () => {
   return (

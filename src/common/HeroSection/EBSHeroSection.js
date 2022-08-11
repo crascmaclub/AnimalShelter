@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Typography, Box, Button } from '@mui/material';
-import test from '../../Assets/project/hero-image.png'
+import test from '../../Assets/project/hero-image.jpg'
 // import { useRouter } from 'next/router'
 
 

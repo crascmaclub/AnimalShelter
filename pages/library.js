@@ -20,16 +20,19 @@ import {
 import { HeroSection } from '../src/common/HeroSection/HeroSection';
 import { LibraryCard } from '../src/common/Card/LibraryCard'
 
-import libray_bg from '../src/Assets/library/HeroImagefixed.png'
+import libray_bg from '../src/Assets/library/HeroImagefixed.jpg'
 
 export const getStaticProps = async () => {
   const res = await fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-animal-page?page=1");
   const data = await res.json();
 
+  // const allAnimal = await fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-all-animal");
+  // const allAnimalData = await allAnimal.json();
 
   return {
     props: {
-      data: data
+      data: data,
+      // animalData: allAnimalData,
     }
   }
 }

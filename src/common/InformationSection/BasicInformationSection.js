@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
-import test from '../../Assets/project/hero-image.png'
+import test from '../../Assets/project/hero-image.jpg'
 // import { useRouter } from 'next/router'
 
 
@@ -10,7 +10,7 @@ export const BasicInformationSection = ({ data }) => {
         <Box component='section' className="InformationSection" >
             <Container maxWidth="xl" sx={{}}>
                 <Box>
-                    <Box sx={{ px: '12%', py: 3, borderBottom: '1px solid #4C6FFF' }} >
+                    <Box sx={{ px: '12%', py: 8, borderBottom: '1px solid #4C6FFF' }} >
                         <Typography variant='body2' sx={{
                             fontFamily: 'Inter, sans-serif',
                             fontWeight: '400'

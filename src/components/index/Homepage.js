@@ -1,14 +1,14 @@
 import React from 'react'
-import { Navbar } from '../../common/Navbar/Navbar'
+
 import { HeroSection } from '../../common/HeroSection/HeroSection'
 import { ContentSection } from '../../common/ContentSection/ContentSection'
 import { Gallery } from '../../common/Gallery/Gallery'
 import { ProjectSection } from '../../common/ProjectSection/ProjectSection'
 import { CTASection } from '../../common/CTASection/CTASection'
-import { Footer } from '../../common/Footer/Footer'
+
 import row1 from '../../Assets/index/elephant.jpg'
 import row2 from '../../Assets/index/map.jpg'
-import hero_img from '../../Assets/index/HeroImage2.png'
+import hero_img from '../../Assets/index/HeroImage2.jpg'
 
 
 const Homepage = ({data}) => {

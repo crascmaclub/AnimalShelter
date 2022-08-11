@@ -2,7 +2,7 @@ import React from 'react'
 import { HeroSection } from '../../common/HeroSection/HeroSection'
 import { LibraryResult } from './LibraryResult'
 
-import libray_bg from '../../Assets/library/HeroImagefixed.png'
+import libray_bg from '../../Assets/library/HeroImagefixed.jpg'
 
 const Library = ({data}) => {
   

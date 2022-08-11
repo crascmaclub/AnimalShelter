@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Container, Typography, Box, Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import texture from '../../Assets/index/texture.png'
-import cta_bg from '../../Assets/index/sus_cta_bg.png'
+import texture from '../../Assets/index/texture.jpg'
+import cta_bg from '../../Assets/index/sus_cta_bg.jpg'
 // import { useRouter } from 'next/router'
 
 export const CTASection = () => {
