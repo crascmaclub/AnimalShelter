@@ -1,18 +1,29 @@
+
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Grid, Typography, Box, Paper, Button, Container, Backdrop, CircularProgress } from '@mui/material';
+import { Typography, Box, Container, Backdrop, CircularProgress } from '@mui/material';
 import { DetailHeroSection } from '../../src/common/HeroSection/DetailHeroSection'
+import { SEO } from '../../src/components/SEO/index'
 import { Callout } from '../../src/common/Callout/Callout'
 import { DetailCard1 } from '../../src/common/Card/DetailCard1'
 import { DetailCard2 } from '../../src/common/Card/DetailCard2'
 import { DetailGallery } from '../../src/common/Gallery/DetailGallery';
 
-export default function Detail() {
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      url: context.req.headers.host,
+    },
+  };
+}
+
+export default function Detail(props) {
   const router = useRouter()
   const { id } = router.query
   const [loading, setLoading] = React.useState(false)
   const [data, setData] = React.useState([])
   const [error, setError] = React.useState('')
+  console.log(props.url)
 
   React.useEffect(() => {
     if (!router.isReady) return;
@@ -57,8 +68,16 @@ export default function Detail() {
   } else {
     return (
       <Box>
+        <SEO
+          url={`${props.url}/animaldetail/${id}`}
+          openGraphType="website"
+          schemaType="article"
+          title={data[0]["name"]}
+          description={data[0]["Fun Fact"]}
+          image={data[0]["Gallery"] ? data[0]["Gallery"][0] : "https://www.aspca.org/sites/default/files/behind-the-scenes-of-an-animal-rescue-main.jpg"}
+        />
         <Container maxWidth='xl' sx={{}} >
-          <DetailHeroSection  data={data} />
+          <DetailHeroSection data={data} />
           <Box className={'DetailPageBody'} >
             <Box sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', alignItems: 'center' }} >
               <Typography variant='h1' sx={(theme) => ({

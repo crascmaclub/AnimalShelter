@@ -1,5 +1,6 @@
 import React from 'react'
-import Head from 'next/head'
+
+import { SEO } from '../src/components/SEO/index'
 import {
   Container,
   Backdrop,
@@ -37,8 +38,7 @@ export const getStaticProps = async () => {
   }
 }
 
-
-export default function Home({ data }) {
+export default function Home({ data, url }) {
   let initialValues = {
     animalName: '',
   }
@@ -122,7 +122,7 @@ export default function Home({ data }) {
         (result) => {
           setClientData(result);
           setTmpData(result);
-          if(tmpData){
+          if (tmpData) {
             setLoading(false)
           }
         },
@@ -134,7 +134,7 @@ export default function Home({ data }) {
           setOpen(true)
         }
       );
-    
+
   }, [])
 
   React.useEffect(() => {
@@ -230,7 +230,15 @@ export default function Home({ data }) {
 
   return (
     <main>
-
+      <SEO
+        url={`${'https://animal-shelter-omega.vercel.app'}/library`}
+        openGraphType="website"
+        schemaType="article"
+        title={"Thư viện động vật"}
+        description={"Với thư viện động vật, chúng tôi cung cấp cho người dùng các thông tin chi tiết về các loài động vật để người dùng có thể hiểu hơn và thấu hiểu những gì động vật đã phải trải qua. Đặc biệt, trang cũng hỗ trợ tiếng Việt - điều nhiều trang thông tin chưa có"}
+        image={"https://static01.nyt.com/images/2022/01/16/fashion/VIRAL-LIBRARY/VIRAL-LIBRARY-articleLarge.jpg?quality=75&auto=webp&disable=upscale"}
+      />
+      
       <HeroSection loading={loading} field={search} setSearch={setSearch} isInput={true} backgroundImg={libray_bg} title={'Cùng khám phá các sự thật thú vị về các loài động vật '} />
 
       <Box sx={{ py: '3%' }}>
