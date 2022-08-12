@@ -1,11 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Grid, Typography, Box, Paper, Button, Container } from '@mui/material';
-import { DetailHeroSection } from '../../src/common/HeroSection/DetailHeroSection'
-import { Callout } from '../../src/common/Callout/Callout'
-import { DetailCard1 } from '../../src/common/Card/DetailCard1'
-import { DetailCard2 } from '../../src/common/Card/DetailCard2'
-import { DetailGallery } from '../../src/common/Gallery/DetailGallery';
+import {Typography, Box, Container } from '@mui/material';
 
 export default function Detail() {
     const router = useRouter()
