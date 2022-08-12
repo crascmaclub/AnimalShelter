@@ -18,22 +18,22 @@ export async function getStaticProps({ params }) {
     props: {
       data: data,
     },
-    revalidate: 10, 
+    revalidate: 10,
   }
 }
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const res = await fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/get-animals-base-on-demand?demand=${'_id'}`)
-  const ids = await res.json() 
+  const ids = await res.json()
 
   const paths = ids.map((id) => ({
     params: { id: id['_id']['$oid'] },
   }))
   // console.log('Paths:',paths)
 
-  return { 
-    paths, 
-    fallback: true 
+  return {
+    paths,
+    fallback: true
   }
 }
 
@@ -45,7 +45,7 @@ export default function Detail(props) {
   // const [data, setData] = React.useState([])
   const data = props.data
   const [error, setError] = React.useState('')
-  console.log('data: ',data)
+  console.log('data: ', data)
 
   // React.useEffect(() => {
   //   if (!router.isReady) return;
@@ -70,24 +70,22 @@ export default function Detail(props) {
 
   // }, [router.isReady])
 
-  // if (error) {
-  //   return <>{error.message}</>;
-  // } else if (!loading) {
-  //   return (
-  //     <Backdrop
-  //       sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#4C6FFF' }}
-  //       open={true}
-  //     >
-  //       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-  //         <CircularProgress color="inherit" />
-  //         <Typography variant='h4' sx={{ fontSize: '1.5rem', fontFamily: 'Inter, sans-serif', color: '#fff', pt: '8%' }}>
-  //           Đang lấy dữ liệu
-  //         </Typography>
-  //       </Box>
+  if (router.isFallback) {
+    return (
+      <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#4C6FFF' }}
+        open={true}
+      >
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <CircularProgress color="inherit" />
+          <Typography variant='h4' sx={{ fontSize: '1.5rem', fontFamily: 'Inter, sans-serif', color: '#fff', pt: '8%' }}>
+            Đang lấy dữ liệu
+          </Typography>
+        </Box>
 
-  //     </Backdrop>
-  //   )
-  // } else {
+      </Backdrop>
+    )
+  } else {
     return (
       <Box>
         <SEO
@@ -133,5 +131,5 @@ export default function Detail(props) {
         </Container>
       </Box>
     )
-  // }
+  }
 }
