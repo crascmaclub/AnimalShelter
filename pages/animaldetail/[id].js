@@ -45,6 +45,7 @@ export default function Detail(props) {
   // const [data, setData] = React.useState([])
   const data = props.data
   const [error, setError] = React.useState('')
+  console.log('data: ',data)
 
   // React.useEffect(() => {
   //   if (!router.isReady) return;

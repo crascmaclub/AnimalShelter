@@ -11,7 +11,7 @@ export const Gallery = ({ apiData }) => {
     let col1 = []
     let col2 = []
     let col3 = []
-    console.log(apiData)
+    // console.log(apiData)
 
     let tmp = []
     let col = 0
