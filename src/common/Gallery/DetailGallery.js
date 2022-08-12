@@ -8,8 +8,8 @@ import { Callout } from '../Callout/Callout';
 
 export const DetailGallery = ({ data }) => {
     const processed_data = data[0]
-    const [images, setImages] = React.useState(processed_data["Gallery"])
-    const isImage = processed_data["Gallery"].length > 0 
+    const images = processed_data["Gallery"] ? processed_data["Gallery"] : []
+    // const isImage = processed_data["Gallery"].length > 0 
     // console.log(processed_data)
     return (
         <Container component='section' maxWidth='xl' sx={{
@@ -52,11 +52,11 @@ export const DetailGallery = ({ data }) => {
                     )
                 })}
 
-                {isImage == false ? (
+                {/* {isImage == false ? (
                     <Callout color={'#F7936F'} title="Không có ảnh" description={'Loài động vật này hiện chưa có ảnh minh họa'} />
                 ) : (
                     null
-                )}
+                )} */}
             </Grid>
 
         </Container >
