@@ -53,9 +53,9 @@ export const SEO = (props) => {
         <Head>
             <title>{title + ' | AnimalShelter'}</title>
             <meta name="description" content={description} />
-            <meta itemprop="name" content={title} />
-            <meta itemprop="description" content={description} />
-            <meta itemprop="image" content={image} />
+            <meta itemProp="name" content={title} />
+            <meta itemProp="description" content={description} />
+            <meta itemProp="image" content={image} />
             {socialTags(props).map(({ name, content }) => {
                 return <meta key={name} name={name} content={content} />;
             })}

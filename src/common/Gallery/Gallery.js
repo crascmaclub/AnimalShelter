@@ -5,9 +5,9 @@ import image from '../../Assets/index/butterfly.jpg'
 // import { useRouter } from 'next/router'
 
 export const Gallery = ({ apiData }) => {
-    const [loading, setLoading] = React.useState(false)
-    const [data, setData] = React.useState([])
-    const [error, setError] = React.useState('')
+    // const [loading, setLoading] = React.useState(false)
+    // const [data, setData] = React.useState([])
+    // const [error, setError] = React.useState('')
     let col1 = []
     let col2 = []
     let col3 = []

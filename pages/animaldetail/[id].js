@@ -9,63 +9,85 @@ import { DetailCard1 } from '../../src/common/Card/DetailCard1'
 import { DetailCard2 } from '../../src/common/Card/DetailCard2'
 import { DetailGallery } from '../../src/common/Gallery/DetailGallery';
 
-export async function getServerSideProps(context) {
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/animal-detail?key=${params.id}`)
+  const data = await res.json()
+
   return {
     props: {
-      url: context.req.headers.host,
+      data: data,
     },
-  };
+    revalidate: 10, 
+  }
 }
+
+export async function getStaticPaths () {
+  const res = await fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/get-animals-base-on-demand?demand=${'_id'}`)
+  const ids = await res.json() 
+
+  const paths = ids.map((id) => ({
+    params: { id: id['_id']['$oid'] },
+  }))
+  console.log(paths)
+
+  return { 
+    paths, 
+    fallback: true 
+  }
+}
+
 
 export default function Detail(props) {
   const router = useRouter()
   const { id } = router.query
   const [loading, setLoading] = React.useState(false)
-  const [data, setData] = React.useState([])
+  // const [data, setData] = React.useState([])
+  const data = props.data
   const [error, setError] = React.useState('')
   console.log(props.url)
 
-  React.useEffect(() => {
-    if (!router.isReady) return;
+  // React.useEffect(() => {
+  //   if (!router.isReady) return;
 
-    let uri = `https://fbi2022-animal-shelter-api.herokuapp.com/animal-detail?key=${id}`
-    console.log(uri)
-    fetch(uri)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setLoading(true);
-          setData(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setLoading(true);
-          setError(error);
-        }
-      );
+  //   let uri = `https://fbi2022-animal-shelter-api.herokuapp.com/animal-detail?key=${id}`
+  //   console.log(uri)
+  //   fetch(uri)
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         setLoading(true);
+  //         setData(result);
+  //       },
+  //       // Note: it's important to handle errors here
+  //       // instead of a catch() block so that we don't swallow
+  //       // exceptions from actual bugs in components.
+  //       (error) => {
+  //         setLoading(true);
+  //         setError(error);
+  //       }
+  //     );
 
-  }, [router.isReady])
+  // }, [router.isReady])
 
-  if (error) {
-    return <>{error.message}</>;
-  } else if (!loading) {
-    return (
-      <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#4C6FFF' }}
-        open={true}
-      >
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <CircularProgress color="inherit" />
-          <Typography variant='h4' sx={{ fontSize: '1.5rem', fontFamily: 'Inter, sans-serif', color: '#fff', pt: '8%' }}>
-            Đang lấy dữ liệu
-          </Typography>
-        </Box>
+  // if (error) {
+  //   return <>{error.message}</>;
+  // } else if (!loading) {
+  //   return (
+  //     <Backdrop
+  //       sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#4C6FFF' }}
+  //       open={true}
+  //     >
+  //       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  //         <CircularProgress color="inherit" />
+  //         <Typography variant='h4' sx={{ fontSize: '1.5rem', fontFamily: 'Inter, sans-serif', color: '#fff', pt: '8%' }}>
+  //           Đang lấy dữ liệu
+  //         </Typography>
+  //       </Box>
 
-      </Backdrop>
-    )
-  } else {
+  //     </Backdrop>
+  //   )
+  // } else {
     return (
       <Box>
         <SEO
@@ -111,5 +133,5 @@ export default function Detail(props) {
         </Container>
       </Box>
     )
-  }
+  // }
 }

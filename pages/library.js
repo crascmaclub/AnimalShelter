@@ -116,7 +116,7 @@ export default function Home({ data, url }) {
 
   React.useEffect(() => {
     setLoading(true);
-    fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-all-animal")
+    fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/get-animals-base-on-demand?demand=${'name,Gallery,Fun Fact,Length,Lifespan,Weight,_id,Location Map'}`)
       .then((res) => res.json())
       .then(
         (result) => {
