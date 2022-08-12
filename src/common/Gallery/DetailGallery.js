@@ -10,7 +10,7 @@ export const DetailGallery = ({ data }) => {
     const processed_data = data[0]
     const [images, setImages] = React.useState(processed_data["Gallery"])
     const isImage = processed_data["Gallery"].length > 0 
-    console.log(processed_data)
+    // console.log(processed_data)
     return (
         <Container component='section' maxWidth='xl' sx={{
             py: '4%'

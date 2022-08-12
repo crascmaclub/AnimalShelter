@@ -12,7 +12,7 @@ export const DetailCard1 = ({ data }) => {
         ['Scientific Name', 'Tên Khoa Học: ']
     ]
     const processed_data = data[0]
-    console.log(processed_data)
+    // console.log(processed_data)
     return (
         <Paper elevation={3} sx={{ my: 8 }}>
             <Box sx={(theme) => ({
