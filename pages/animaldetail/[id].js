@@ -29,7 +29,7 @@ export async function getStaticPaths () {
   const paths = ids.map((id) => ({
     params: { id: id['_id']['$oid'] },
   }))
-  console.log(paths)
+  // console.log('Paths:',paths)
 
   return { 
     paths, 
@@ -45,7 +45,6 @@ export default function Detail(props) {
   // const [data, setData] = React.useState([])
   const data = props.data
   const [error, setError] = React.useState('')
-  console.log(props.url)
 
   // React.useEffect(() => {
   //   if (!router.isReady) return;
