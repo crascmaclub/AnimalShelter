@@ -15,7 +15,7 @@ export default function environment_balance_system(props) {
     return (
         <div>
             <SEO
-                url={`${props.url}/project/ebs`}
+                url={`${'https://animal-shelter-omega.vercel.app'}/project/ebs`}
                 openGraphType="website"
                 schemaType="article"
                 title={"Hệ thống kiểm soát môi trường sinh thái"}

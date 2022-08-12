@@ -69,7 +69,7 @@ export default function Detail(props) {
     return (
       <Box>
         <SEO
-          url={`${props.url}/animaldetail/${id}`}
+          url={`${'https://animal-shelter-omega.vercel.app'}/animaldetail/${id}`}
           openGraphType="website"
           schemaType="article"
           title={data[0]["name"]}
