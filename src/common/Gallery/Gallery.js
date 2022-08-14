@@ -124,7 +124,7 @@ export const Gallery = ({ apiData }) => {
                             fontSize: '1.5rem',
                         },
                     })}>
-                        Chúng tôi cung cấp thông tin đầy đủ nhất về các loài động thực vật trong thiên nhiên
+                        Chúng tôi cung cấp thông tin đầy đủ nhất về các loài động vật trong thiên nhiên
                     </Typography>
                     <Box sx={(theme) => ({
                         pl: '5%',
