@@ -126,6 +126,28 @@ export default function Detail(props) {
 
             <DetailCard2 data={data} />
 
+            {data[0]['iframe'] ? (
+              <Box sx={(theme) => ({
+                width:'100%',
+                height:'700px',
+                [theme.breakpoints.down("lg")]: {
+                  heiht:'650px'
+                },
+                [theme.breakpoints.down("md")]: {
+                  height:'550px'
+                },
+                [theme.breakpoints.down("sm")]: {
+                  height:'450px'
+                },
+              })} >
+              <iframe style={{width: "100%", height: "100%"}} title="Pig" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+                src={data[0]['iframe']}> </iframe>
+              </Box>
+            ) : (
+              null
+            )}
+
             <DetailGallery data={data} />
           </Box>
         </Container>

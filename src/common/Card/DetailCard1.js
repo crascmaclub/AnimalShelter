@@ -146,6 +146,9 @@ export const DetailCard1 = ({ data }) => {
                             aspectRatio: '8/4',
                             objectFit: 'cover',
                             mt: 2,
+                            [theme.breakpoints.up("md")]: {
+                                maxWidth:'500px'
+                            },
                         })} />
                     </Box>
                 </Box>
