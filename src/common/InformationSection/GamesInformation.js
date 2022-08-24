@@ -151,7 +151,6 @@ export const GamesInformation = ({ data }) => {
                     </Grid>
                 </Grid>
 
-
                 <Dialog
                     open={appear}
                     TransitionComponent={Transition}
