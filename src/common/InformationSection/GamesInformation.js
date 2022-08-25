@@ -128,7 +128,10 @@ export const GamesInformation = ({ data }) => {
 
                                 <Button
                                     variant='contained'
-                                    onClick={handleClick}
+                                    // onClick={handleClick}
+                                    component='a'
+                                    href='http://sebastianmihai.com/subpages/animalkeeper/keeper.html'
+                                    target="_blank"
                                     sx={(theme) => ({
                                         backgroundColor: '#4C6FFF',
                                         color: '#FFF',
@@ -175,7 +178,7 @@ export const GamesInformation = ({ data }) => {
                                 height: '450px'
                             },
                         })} >
-                            <iframe style={{ width: "100%", height: "100%" }} title="Pig" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                            <iframe style={{ width: "100%", height: "100%" }} frameborder="0" allowfullscreen mozallowfullscreen="true"
                                 webkitallowfullscreen="true"
                                 src={"http://sebastianmihai.com/subpages/animalkeeper/keeper.html"}> </iframe>
                         </Box>
