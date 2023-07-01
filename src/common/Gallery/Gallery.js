@@ -34,7 +34,7 @@ export const Gallery = ({ apiData }) => {
     }
 
     // React.useEffect(() => {
-    //     fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-thumbnails")
+    //     fetch("https://animalsheltedbacknew-production.up.railway.app/get-thumbnails")
     //         .then((res) => res.json())
     //         .then(
     //             (result) => {

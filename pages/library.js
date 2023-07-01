@@ -24,10 +24,10 @@ import { LibraryCard } from '../src/common/Card/LibraryCard'
 import libray_bg from '../src/Assets/library/HeroImagefixed.jpg'
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-animal-page?page=1");
+  const res = await fetch("https://animalsheltedbacknew-production.up.railway.app/get-animal-page?page=1");
   const data = await res.json();
 
-  // const allAnimal = await fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-all-animal");
+  // const allAnimal = await fetch("https://animalsheltedbacknew-production.up.railway.app/get-all-animal");
   // const allAnimalData = await allAnimal.json();
 
   return {
@@ -116,7 +116,7 @@ export default function Home({ data, url }) {
 
   React.useEffect(() => {
     setLoading(true);
-    fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/get-animals-base-on-demand?demand=${'name,Gallery,Fun Fact,Length,Lifespan,Weight,_id,Location Map'}`)
+    fetch(`https://animalsheltedbacknew-production.up.railway.app/get-animals-base-on-demand?demand=${'name,Gallery,Fun Fact,Length,Lifespan,Weight,_id,Location Map'}`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -175,7 +175,7 @@ export default function Home({ data, url }) {
 
     //   let check_str = search.animalName.toLowerCase()
 
-    //   fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/search-animal?name=${check_str}`)
+    //   fetch(`https://animalsheltedbacknew-production.up.railway.app/search-animal?name=${check_str}`)
     //   .then((res) => res.json())
     //   .then(
     //     (result) => {
@@ -238,7 +238,7 @@ export default function Home({ data, url }) {
         description={"Với thư viện động vật, chúng tôi cung cấp cho người dùng các thông tin chi tiết về các loài động vật để người dùng có thể hiểu hơn và thấu hiểu những gì động vật đã phải trải qua. Đặc biệt, trang cũng hỗ trợ tiếng Việt - điều nhiều trang thông tin chưa có"}
         image={"https://static01.nyt.com/images/2022/01/16/fashion/VIRAL-LIBRARY/VIRAL-LIBRARY-articleLarge.jpg?quality=75&auto=webp&disable=upscale"}
       />
-      
+
       <HeroSection loading={loading} field={search} setSearch={setSearch} isInput={true} backgroundImg={libray_bg} title={'Cùng khám phá các sự thật thú vị về các loài động vật '} />
 
       <Box sx={{ py: '3%' }}>

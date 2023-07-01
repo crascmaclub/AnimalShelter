@@ -23,7 +23,7 @@ export const ContentSection = ({ src, dark, reverse, section, title, description
         setLoading(true)
         setDone(false)
         setOpen(true)
-        fetch("https://fbi2022-animal-shelter-api.herokuapp.com/get-map-data")
+        fetch("https://animalsheltedbacknew-production.up.railway.app/get-map-data")
             .then((res) => res.json())
             .then(
                 (result) => {

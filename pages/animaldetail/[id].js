@@ -11,7 +11,7 @@ import { DetailGallery } from '../../src/common/Gallery/DetailGallery';
 
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/animal-detail?key=${params.id}`)
+  const res = await fetch(`https://animalsheltedbacknew-production.up.railway.app/animal-detail?key=${params.id}`)
   const data = await res.json()
 
   return {
@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`https://fbi2022-animal-shelter-api.herokuapp.com/get-animals-base-on-demand?demand=${'_id'}`)
+  const res = await fetch(`https://animalsheltedbacknew-production.up.railway.app/get-animals-base-on-demand?demand=${'_id'}`)
   const ids = await res.json()
 
   const paths = ids.map((id) => ({
@@ -50,7 +50,7 @@ export default function Detail(props) {
   // React.useEffect(() => {
   //   if (!router.isReady) return;
 
-  //   let uri = `https://fbi2022-animal-shelter-api.herokuapp.com/animal-detail?key=${id}`
+  //   let uri = `https://animalsheltedbacknew-production.up.railway.app/animal-detail?key=${id}`
   //   console.log(uri)
   //   fetch(uri)
   //     .then((res) => res.json())
@@ -128,21 +128,21 @@ export default function Detail(props) {
 
             {data[0]['iframe'] ? (
               <Box sx={(theme) => ({
-                width:'100%',
-                height:'700px',
+                width: '100%',
+                height: '700px',
                 [theme.breakpoints.down("lg")]: {
-                  heiht:'650px'
+                  heiht: '650px'
                 },
                 [theme.breakpoints.down("md")]: {
-                  height:'550px'
+                  height: '550px'
                 },
                 [theme.breakpoints.down("sm")]: {
-                  height:'450px'
+                  height: '450px'
                 },
               })} >
-              <iframe style={{width: "100%", height: "100%"}} title="Pig" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                src={data[0]['iframe']}> </iframe>
+                <iframe style={{ width: "100%", height: "100%" }} title="Pig" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                  webkitallowfullscreen="true"
+                  src={data[0]['iframe']}> </iframe>
               </Box>
             ) : (
               null
