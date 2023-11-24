@@ -8,28 +8,11 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-<!-- [![MIT License][license-shield]][license-url] -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
+![Product Name Screen Shot](./animalshelter.png)
 <br />
 <div align="center">
+
 
 <h3 align="center">AnimalShelter</h3>
 
@@ -79,8 +62,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Currently, there are a number of sites that provide information about animals, but I really haven't found one that suits me personally. At the same time, most of those websites are in English - which makes it difficult for a large number of people in my country - Vietnam to access such information. That's why I have created this website with a clean interface and accurate information referenced from many sources to contribute to **raising people's awareness** in protecting animals.
 
@@ -157,7 +138,18 @@ Project Link: [https://github.com/Supporter09/AnimalShelter](https://github.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments
