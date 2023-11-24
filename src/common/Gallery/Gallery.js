@@ -34,7 +34,7 @@ export const Gallery = ({ apiData }) => {
     }
 
     // React.useEffect(() => {
-    //     fetch("https://animalsheltedbacknew-production.up.railway.app/get-thumbnails")
+    //     fetch(process.env.REACT_APP_BACKEND_LINK+"get-thumbnails")
     //         .then((res) => res.json())
     //         .then(
     //             (result) => {

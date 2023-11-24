@@ -3,7 +3,7 @@ import Homepage from '../src/components/index/Homepage'
 import { SEO } from '../src/components/SEO/index'
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://animalsheltedbacknew-production.up.railway.app/get-thumbnails");
+  const res = await fetch(`https://animal-shelter-6wb7.onrender.com/get-thumbnails`);
   const data = await res.json();
 
 

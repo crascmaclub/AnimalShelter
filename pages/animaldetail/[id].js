@@ -11,7 +11,7 @@ import { DetailGallery } from '../../src/common/Gallery/DetailGallery';
 
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(`https://animalsheltedbacknew-production.up.railway.app/animal-detail?key=${params.id}`)
+  const res = await fetch(`https://animal-shelter-6wb7.onrender.com/animal-detail?key=${params.id}`)
   const data = await res.json()
 
   return {
@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`https://animalsheltedbacknew-production.up.railway.app/get-animals-base-on-demand?demand=${'_id'}`)
+  const res = await fetch(`https://animal-shelter-6wb7.onrender.com/get-animals-base-on-demand?demand=${'_id'}`)
   const ids = await res.json()
 
   const paths = ids.map((id) => ({
@@ -50,7 +50,7 @@ export default function Detail(props) {
   // React.useEffect(() => {
   //   if (!router.isReady) return;
 
-  //   let uri = `https://animalsheltedbacknew-production.up.railway.app/animal-detail?key=${id}`
+  //   let uri = process.env.REACT_APP_BACKEND_LINK+`animal-detail?key=${id}`
   //   console.log(uri)
   //   fetch(uri)
   //     .then((res) => res.json())

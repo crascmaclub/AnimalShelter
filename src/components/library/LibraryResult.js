@@ -65,7 +65,7 @@ export const LibraryResult = ({ area, type, setArea, setType, field, apiData }) 
     };
 
     React.useEffect(() => {
-        fetch("https://animalsheltedbacknew-production.up.railway.app/get-all-animal")
+        fetch(`https://animal-shelter-6wb7.onrender.com/get-all-animal`)
             .then((res) => res.json())
             .then(
                 (result) => {

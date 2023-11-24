@@ -24,10 +24,10 @@ import { LibraryCard } from '../src/common/Card/LibraryCard'
 import libray_bg from '../src/Assets/library/HeroImagefixed.jpg'
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://animalsheltedbacknew-production.up.railway.app/get-animal-page?page=1");
+  const res = await fetch(`https://animal-shelter-6wb7.onrender.com/get-animal-page?page=1`);
   const data = await res.json();
 
-  // const allAnimal = await fetch("https://animalsheltedbacknew-production.up.railway.app/get-all-animal");
+  // const allAnimal = await fetch("https://animal-shelter-6wb7.onrender.com/get-all-animal");
   // const allAnimalData = await allAnimal.json();
 
   return {
@@ -116,7 +116,7 @@ export default function Home({ data, url }) {
 
   React.useEffect(() => {
     setLoading(true);
-    fetch(`https://animalsheltedbacknew-production.up.railway.app/get-animals-base-on-demand?demand=${'name,Gallery,Fun Fact,Length,Lifespan,Weight,_id,Location Map'}`)
+    fetch(`https://animal-shelter-6wb7.onrender.com/get-animals-base-on-demand?demand=${'name,Gallery,Fun Fact,Length,Lifespan,Weight,_id,Location Map'}`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -175,7 +175,7 @@ export default function Home({ data, url }) {
 
     //   let check_str = search.animalName.toLowerCase()
 
-    //   fetch(`https://animalsheltedbacknew-production.up.railway.app/search-animal?name=${check_str}`)
+    //   fetch(process.env.REACT_APP_BACKEND_LINK+`search-animal?name=${check_str}`)
     //   .then((res) => res.json())
     //   .then(
     //     (result) => {

@@ -23,7 +23,7 @@ export const ContentSection = ({ src, dark, reverse, section, title, description
         setLoading(true)
         setDone(false)
         setOpen(true)
-        fetch("https://animalsheltedbacknew-production.up.railway.app/get-map-data")
+        fetch(`https://animal-shelter-6wb7.onrender.com/get-map-data`)
             .then((res) => res.json())
             .then(
                 (result) => {
