@@ -29,8 +29,9 @@
     <a href="https://github.com/Supporter09/AnimalShelter/issues">Request Feature</a>
   </p>
 </div>
+
 <!-- ABOUT THE PROJECT -->
-### Về dự án
+<h1>Về dự án</h1> 
 
 Hiện nay, có một số trang web cung cấp thông tin về động vật, nhưng tôi thực sự chưa tìm được trang nào phù hợp với mình. Hơn nữa, hầu hết các trang web đó đều bằng tiếng Anh - điều này gây khó khăn cho rất nhiều người dân ở Việt Nam, đất nước tôi, trong việc tiếp cận những thông tin như vậy. Đó là lý do tại sao tôi tạo ra trang web này với giao diện rõ ràng và thông tin chính xác được tham khảo từ nhiều nguồn để góp phần **nâng cao nhận thức** của mọi người trong việc bảo vệ động vật.
 
