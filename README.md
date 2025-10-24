@@ -30,7 +30,7 @@
   </p>
 </div>
 <!-- ABOUT THE PROJECT -->
-## Về dự án
+### Về dự án
 
 Hiện nay, có một số trang web cung cấp thông tin về động vật, nhưng tôi thực sự chưa tìm được trang nào phù hợp với mình. Hơn nữa, hầu hết các trang web đó đều bằng tiếng Anh - điều này gây khó khăn cho rất nhiều người dân ở Việt Nam, đất nước tôi, trong việc tiếp cận những thông tin như vậy. Đó là lý do tại sao tôi tạo ra trang web này với giao diện rõ ràng và thông tin chính xác được tham khảo từ nhiều nguồn để góp phần **nâng cao nhận thức** của mọi người trong việc bảo vệ động vật.
 
@@ -89,11 +89,13 @@ Bấm vào phần [open issues](https://github.com/Supporter09/AnimalShelter/iss
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Thành viên -->
-<ul>Thành viên nhóm</ul>
+### Thành viên nhóm
+<ul>
 <li>Mai Văn Nhật Minh</li>
 <li>Đỗ Vũ Minh Quang</li>
 <li>Đặng Thị Nụ</li>
 <li>Dương Tiến Thành</li>
+</ul>
 
 <!-- LICENSE -->
 ## License
@@ -109,7 +111,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Mai Văn Nhật Minh - maivannhatminh2005@gmail.com
 
-CMA Robotics & STEAM Club - [Facebook-logo](https://www.facebook.com/cras.cma.club)
+CMA Robotics & STEAM Club - [https://www.facebook.com/cras.cma.club](https://www.facebook.com/cras.cma.club)
 
 Dự án: [https://github.com/Supporter09/AnimalShelter](https://github.com/Supporter09/AnimalShelter)
 
@@ -170,4 +172,3 @@ Dự án: [https://github.com/Supporter09/AnimalShelter](https://github.com/Supp
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[Facebook-logo]: https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png
