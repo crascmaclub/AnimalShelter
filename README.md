@@ -17,7 +17,7 @@
 <h3 align="center">AnimalShelter</h3>
 
   <p align="center">
-    AnimalShelter is a project with the mission of raising people's awareness about animals that are more specifically endangered species. In addition, we also aim to develop projects that help capture environmental changes that adversely affect the ecological environment so that we can offer timely solutions.
+    AnimalShelter là một dự án của team <b>CRAS</b> trong khuôn khổ cuộc thi <i><b>Future Blue Innovation 2022</b></i> với sứ mệnh nâng cao nhận thức của mọi người về các loài động vật, đặc biệt là các loài có nguy cơ tuyệt chủng. Ngoài ra, chúng tôi cũng hướng đến việc phát triển các dự án giúp nắm bắt những thay đổi môi trường ảnh hưởng tiêu cực đến môi trường sinh thái để có thể đưa ra các giải pháp kịp thời.
     <br />
     <a href="https://github.com/Supporter09/AnimalShelter"><strong>Explore the docs »</strong></a>
     <br />
@@ -29,47 +29,16 @@
     <a href="https://github.com/Supporter09/AnimalShelter/issues">Request Feature</a>
   </p>
 </div>
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Về dự án
 
-Currently, there are a number of sites that provide information about animals, but I really haven't found one that suits me personally. At the same time, most of those websites are in English - which makes it difficult for a large number of people in my country - Vietnam to access such information. That's why I have created this website with a clean interface and accurate information referenced from many sources to contribute to **raising people's awareness** in protecting animals.
+Hiện nay, có một số trang web cung cấp thông tin về động vật, nhưng tôi thực sự chưa tìm được trang nào phù hợp với mình. Hơn nữa, hầu hết các trang web đó đều bằng tiếng Anh - điều này gây khó khăn cho rất nhiều người dân ở Việt Nam, đất nước tôi, trong việc tiếp cận những thông tin như vậy. Đó là lý do tại sao tôi tạo ra trang web này với giao diện rõ ràng và thông tin chính xác được tham khảo từ nhiều nguồn để góp phần **nâng cao nhận thức** của mọi người trong việc bảo vệ động vật.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Built With
+### Ngôn ngữ sử dụng
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
@@ -84,41 +53,47 @@ Currently, there are a number of sites that provide information about animals, b
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Cách sử dụng
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Đây là một ví dụ về cách bạn có thể hướng dẫn thiết lập dự án trên máy.
+Để thiết lập và chạy bản sao trên máy, hãy làm theo các bước đơn giản sau.
 
 ### Installation
 
-First, install dependencies:
+Đầu tiên, tải các dependencies:
 
 ```bash
 yarn install
 ```
 
-Second, run the development environment:
+Tiếp theo, khởi động môi trường lập trình:
 ```bash
 yarn run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Mở [http://localhost:3000](http://localhost:3000) bằng trình duyệt của bạn để xem kết quả.
 
-All pages are in `pages/`. The page auto-updates as you edit the file.
+Tất cả các trang nằm trong `pages/`. Những trang này sẽ tự động update khi bạn edit files.
 
-The `src/common` directory provides several common components that i used in the project.
+Folder `src/common` chứa những thành phần phổ biến được chúng tôi sử dụng trong dự án.
 
 
 <!-- ROADMAP -->
-## Roadmap
-
+## Mục tiêu
 - [x] Animal Library
 - [x] Animal Radar
 - [x] Environment Radar System
 
-See the [open issues](https://github.com/Supporter09/AnimalShelter/issues) for a full list of proposed features (and known issues).
+Bấm vào phần [open issues](https://github.com/Supporter09/AnimalShelter/issues) để xem danh sách đầy đủ.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Thành viên -->
+<ul>Thành viên nhóm</ul>
+<li>Mai Văn Nhật Minh</li>
+<li>Đỗ Vũ Minh Quang</li>
+<li>Đặng Thị Nụ</li>
+<li>Dương Tiến Thành</li>
 
 <!-- LICENSE -->
 ## License
@@ -132,9 +107,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - maivannhatminh2005@gmail.com
+Mai Văn Nhật Minh - maivannhatminh2005@gmail.com
 
-Project Link: [https://github.com/Supporter09/AnimalShelter](https://github.com/Supporter09/AnimalShelter)
+CMA Robotics & STEAM Club - [Facebook-logo](https://www.facebook.com/cras.cma.club)
+
+Dự án: [https://github.com/Supporter09/AnimalShelter](https://github.com/Supporter09/AnimalShelter)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,3 +170,4 @@ Project Link: [https://github.com/Supporter09/AnimalShelter](https://github.com/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[Facebook-logo]: https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png
